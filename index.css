@@ -15,7 +15,8 @@
     }
     
     .main {
-        width: 60%;
+        width: 90%;
+        max-width: 600px;
         background-color: #ffffff;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -31,6 +32,7 @@
     
     header h1 {
         margin: 0;
+        font-size: 1.5rem;
     }
     
     .quiz-container {
@@ -98,6 +100,7 @@
     .button-container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
     
     button {
@@ -106,6 +109,13 @@
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s;
+        margin-bottom: 10px;
+        flex: 1 1 auto;
+        margin-right: 10px;
+    }
+    
+    button:last-child {
+        margin-right: 0;
     }
     
     #next {
@@ -129,6 +139,7 @@
     .bottom-buttons {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         margin-top: 20px;
     }
     
@@ -153,5 +164,61 @@
     #liveScore {
         margin-top: 20px;
         font-size: 1.2rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    /* Media Queries */
+    @media (max-width: 768px) {
+        .quiz-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .question-number,
+        .timer {
+            font-size: 1rem;
+        }
+    
+        h2 {
+            font-size: 1.2rem;
+        }
+    
+        .button-container,
+        .bottom-buttons {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    
+        button {
+            margin-right: 0;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 1.2rem;
+        }
+    
+        .question-number,
+        .timer {
+            font-size: 0.9rem;
+        }
+    
+        h2 {
+            font-size: 1rem;
+        }
+    
+        .option label {
+            padding: 8px;
+        }
+    
+        button {
+            padding: 8px 15px;
+        }
+    
+        #liveScore {
+            font-size: 1rem;
+        }
     }
     
